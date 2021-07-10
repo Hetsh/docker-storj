@@ -1,0 +1,23 @@
+[Unit]
+Description=Storj Node Container
+After=docker.service
+Requires=docker.service
+
+[Service]
+ExecStartPre=-/bin/docker create \
+              --rm \
+              --name storj \
+              --publish 14002:14002/tcp \
+		      --publish 28967:28967/tcp \
+		      --publish 28967:28967/udp \
+              --mount type=bind,source=/apps/storj/config,target=/storj/config \
+              --mount type=bind,source=/apps/storj/storage,target=/storj/storage \
+              --mount type=bind,source=/apps/storj/identity,target=/storj/identity \
+              --mount type=bind,source=/etc/localtime,target=/etc/localtime,readonly \
+              --stop-timeout 60 \
+              hetsh/storj
+ExecStart=/bin/docker start --attach storj
+ExecStop=/bin/docker stop storj
+
+[Install]
+WantedBy=multi-user.target
