@@ -15,7 +15,7 @@ RUN apk add --no-cache unzip && \
     wget --quiet \
         "$BASE_URL/identity_linux_amd64.zip" \
         "$BASE_URL/storagenode_linux_amd64.zip" \
-        "$BASE_URL/uplink_freebsd_amd64.zip" && \
+        "$BASE_URL/uplink_linux_amd64.zip" && \
     unzip -d "/usr/bin" "*.zip" && \
     rm *.zip && \
     apk del unzip
