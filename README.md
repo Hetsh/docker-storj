@@ -5,7 +5,13 @@ Simple to set up Storj node.
 
 ## Running the server
 ```bash
-docker run --detach --name storj --publish 14002:14002/tcp --publish 28967:28967/tcp --publish 28967:28967/udp hetsh/storj
+docker run \
+    --detach \
+    --name storj \
+    --publish 14002:14002/tcp \
+    --publish 28967:28967/tcp \
+    --publish 28967:28967/udp \
+    hetsh/storj
 ```
 
 ## Stopping the container
