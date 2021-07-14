@@ -44,6 +44,23 @@ The timezone can be shared with this mount flag:
 docker run --mount type=bind,source=/etc/localtime,target=/etc/localtime,readonly ...
 ```
 
+## Setup
+An identity must be generated to operate a node.
+You first need to request an authentication token on the [STORJ website](https://www.storj.io/host-a-node) before running the [setup script](https://github.com/Hetsh/docker-storj/blob/master/setup.sh).
+Generating the required identity may take several hours depending on luck and hardware performance, so run this on a powerful computer:
+```bash
+docker run \
+    --rm \
+    --tty \
+    --interactive \
+    --mount type=bind,source=/path/to/config,target=/storj/config \
+    --mount type=bind,source=/path/to/storage,target=/storj/storage \
+    --mount type=bind,source=/path/to/identity,target=/storj/identity \
+    --mount type=bind,source=/etc/localtime,target=/etc/localtime,readonly \
+    --entrypoint ./setup.sh \
+    hetsh/storj <your_email:token>
+```
+
 ## Automate startup and shutdown via systemd
 The systemd unit can be found in my GitHub [repository](https://github.com/Hetsh/docker-storj).
 ```bash
