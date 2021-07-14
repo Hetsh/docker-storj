@@ -32,16 +32,19 @@ The user must have RW access to the storage directory.
 Start the server with the additional mount flags:
 ```bash
 docker run \
-    --mount type=bind,source=/path/to/config,target=/storj/config
-    --mount type=bind,source=/path/to/storage,target=/storj/storage
-    --mount type=bind,source=/path/to/identity,target=/storj/identity ...
+    --mount type=bind,source=/path/to/config,target=/storj/config \
+    --mount type=bind,source=/path/to/storage,target=/storj/storage \
+    --mount type=bind,source=/path/to/identity,target=/storj/identity \
+    ...
 ```
 
 ## Time
 Synchronizing the timezones will display the correct time in the logs.
 The timezone can be shared with this mount flag:
 ```bash
-docker run --mount type=bind,source=/etc/localtime,target=/etc/localtime,readonly ...
+docker run \
+    --mount type=bind,source=/etc/localtime,target=/etc/localtime,readonly \
+    ...
 ```
 
 ## Setup
