@@ -58,7 +58,7 @@ docker run \
     --mount type=bind,source=/path/to/identity,target=/storj/identity \
     --mount type=bind,source=/etc/localtime,target=/etc/localtime,readonly \
     --entrypoint ./setup.sh \
-    hetsh/storj <your_email:token>
+    hetsh/storj <your_email:auth_token>
 ```
 
 ## Automate startup and shutdown via systemd
@@ -66,7 +66,7 @@ The systemd unit can be found in my GitHub [repository](https://github.com/Hetsh
 ```bash
 systemctl enable storj --now
 ```
-By default, the systemd service assumes `/apps/storj/config` for config, `/apps/storj/storage` for storage, `/apps/storj/identity` for identity and `/etc/localtime` for timezone.
+By default, the systemd service assumes `/apps/storj/config` for config, `/mnt/storage` for storage, `/apps/storj/identity` for identity and `/etc/localtime` for timezone.
 Since this is a personal systemd unit file, you might need to adjust some parameters to suit your setup.
 
 ## Fork Me!
