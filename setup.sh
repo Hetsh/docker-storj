@@ -1,7 +1,8 @@
 #!/bin/sh
-set +x -e -u
+set -e -u
 
 AUTH_TOKEN="$1"
+ERC20_ADDRESS="$2"
 CONFIG_DIR="config"
 IDENTITY_DIR="identity"
 
@@ -31,5 +32,6 @@ if [ ! -f "$CONFIG_DIR/config.yaml" ]; then
 		--config-dir "$CONFIG_DIR" \
 		--identity-dir "$IDENTITY_DIR" \
 		--storage.path "storage" \
-		--console.address "0.0.0.0:14002"
+		--console.address "0.0.0.0:14002" \
+		--operator.wallet "$ERC20_ADDRESS"
 fi

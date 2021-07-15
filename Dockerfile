@@ -36,11 +36,7 @@ EXPOSE 14002/tcp 28967/tcp 28967/udp
 USER "$APP_USER"
 WORKDIR "$DATA_DIR"
 ENV CONFIG_DIR="$CONFIG_DIR" \
-    STORAGE_DIR="$STORAGE_DIR" \
-    IDENTITY_DIR="$IDENTITY_DIR" \
     NODE_OPTS=""
 ENTRYPOINT exec storagenode run \
     --config-dir "$CONFIG_DIR" \
-    --storage.path "$STORAGE_DIR" \
-    --identity-dir "$IDENTITY_DIR" \
     $NODE_OPTS

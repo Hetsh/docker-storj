@@ -59,7 +59,7 @@ docker run \
     --mount type=bind,source=/path/to/identity,target=/storj/identity \
     --mount type=bind,source=/etc/localtime,target=/etc/localtime,readonly \
     --entrypoint ./setup.sh \
-    hetsh/storj <your_email:auth_token>
+    hetsh/storj <your_email:auth_token> <your_public_eth_address>
 ```
 
 ## Automate startup and shutdown via systemd
