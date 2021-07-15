@@ -1,5 +1,3 @@
-**This Project is still work in progress.**
-
 # Storj Node
 Simple to set up Storj node.
 

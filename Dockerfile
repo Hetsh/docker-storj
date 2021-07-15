@@ -7,6 +7,7 @@ ARG APP_UID=1377
 ARG APP_USER="storj"
 ARG DATA_DIR="/storj"
 RUN adduser --disabled-password --uid "$APP_UID" --home "$DATA_DIR" --gecos "$APP_USER" "$APP_USER"
+COPY --chown="$APP_USER":"$APP_USER" setup.sh "$DATA_DIR"
 
 # Installation
 ARG APP_VERSION=1.34.3
@@ -36,7 +37,7 @@ USER "$APP_USER"
 WORKDIR "$DATA_DIR"
 ENV CONFIG_DIR="$CONFIG_DIR" \
     STORAGE_DIR="$STORAGE_DIR" \
-    IDENTITY_DIR="$IDENTITY_DIR"\
+    IDENTITY_DIR="$IDENTITY_DIR" \
     NODE_OPTS=""
 ENTRYPOINT exec storagenode run \
     --config-dir "$CONFIG_DIR" \
