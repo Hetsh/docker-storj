@@ -1,6 +1,6 @@
 FROM amd64/alpine:20210804
 RUN apk add --no-cache \
-        ca-certificates=20191127-r5
+        ca-certificates=20191127-r6
 
 # App user
 ARG APP_UID=1377
