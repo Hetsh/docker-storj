@@ -10,7 +10,7 @@ RUN adduser --disabled-password --uid "$APP_UID" --home "$DATA_DIR" --gecos "$AP
 COPY --chown="$APP_USER":"$APP_USER" setup.sh "$DATA_DIR"
 
 # Installation
-ARG APP_VERSION=1.39.5
+ARG APP_VERSION=1.40.4
 ARG BASE_URL="https://github.com/storj/storj/releases/download/v$APP_VERSION"
 RUN apk add --no-cache unzip && \
     wget --quiet \
