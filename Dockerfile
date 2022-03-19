@@ -1,4 +1,4 @@
-FROM amd64/alpine:20210804
+FROM amd64/alpine:20220316
 RUN apk add --no-cache \
         ca-certificates=20211220-r0
 
@@ -10,7 +10,7 @@ RUN adduser --disabled-password --uid "$APP_UID" --home "$DATA_DIR" --gecos "$AP
 COPY --chown="$APP_USER":"$APP_USER" setup.sh "$DATA_DIR"
 
 # Installation
-ARG APP_VERSION=1.49.5
+ARG APP_VERSION=1.50.4
 ARG BASE_URL="https://github.com/storj/storj/releases/download/v$APP_VERSION"
 RUN apk add --no-cache unzip && \
     wget --quiet \
