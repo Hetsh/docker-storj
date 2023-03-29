@@ -1,4 +1,4 @@
-FROM amd64/alpine:20230208
+FROM amd64/alpine:20230329
 RUN apk add --no-cache \
         ca-certificates=20230106-r0
 
