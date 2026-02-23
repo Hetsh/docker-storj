@@ -5,6 +5,12 @@ Simple to set up Storj node.
 Storj needs to be configured first.
 Use their [Guide](https://storj.dev/node/get-started/setup) to get started.
 
+This image starts `storagenode` with parameters `run --config-dir /config`.
+However, you can override them:
+```bash
+docker run ... hetsh/storj <command> <parameters>
+```
+
 ## Creating persistent storage
 ```bash
 CONFIG="/path/to/config"
@@ -18,9 +24,9 @@ The user must have RW access to these directories.
 Start the server with additional mount parameters:
 ```bash
 docker run \
-	--mount type=bind,source=/path/to/config,target=/storj/config \
-	--mount type=bind,source=/path/to/storage,target=/storj/storage \
-	--mount type=bind,source=/path/to/identity,target=/storj/identity \
+	--mount type=bind,source=/path/to/config,target=/config \
+	--mount type=bind,source=/path/to/storage,target=/storage \
+	--mount type=bind,source=/path/to/identity,target=/identity \
 	...
 ```
 
