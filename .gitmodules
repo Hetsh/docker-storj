@@ -1,3 +1,3 @@
-[submodule "libs"]
-	path = libs
-	url = https://github.com/Hetsh/BashCommons.git
+[submodule "scripts"]
+	path = scripts
+	url = git@github.com:Hetsh/bash-docker.git
