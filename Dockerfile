@@ -5,7 +5,7 @@ RUN apk upgrade --no-cache && \
 		ca-certificates=20251003-r0
 
 # Installation
-ARG APP_VERSION=1.148.4
+ARG APP_VERSION=1.149.2
 # ToDo: switch to ADD once .zip archives are supported
 # ADD --unpack=true "https://github.com/storj/storj/releases/download/v$APP_VERSION/storagenode_linux_amd64.zip" "/usr/bin/"
 ARG BASE_URL="https://github.com/storj/storj/releases/download/v$APP_VERSION"
