@@ -1,11 +1,11 @@
-FROM hetsh/alpine:20260127-6
-ARG LAST_UPGRADE="2026-04-13T15:31:45+02:00"
+FROM hetsh/alpine:20260127-7
+ARG LAST_UPGRADE="2026-04-15T09:20:01+02:00"
 RUN apk upgrade --no-cache && \
 	apk add --no-cache \
-		ca-certificates=20251003-r0
+		ca-certificates=20260413-r0
 
 # Installation
-ARG APP_VERSION=1.151.4
+ARG APP_VERSION=1.151.5
 # ToDo: switch to ADD once .zip archives are supported
 # ADD --unpack=true "https://github.com/storj/storj/releases/download/v$APP_VERSION/storagenode_linux_amd64.zip" "/usr/bin/"
 ARG BASE_URL="https://github.com/storj/storj/releases/download/v$APP_VERSION"
