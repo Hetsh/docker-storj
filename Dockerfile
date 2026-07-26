@@ -1,5 +1,5 @@
-FROM hetsh/alpine:20260127-9
-ARG LAST_UPGRADE="2026-06-28T09:09:09+02:00"
+FROM hetsh/alpine:20260127-10
+ARG LAST_UPGRADE="2026-07-26T11:17:02+02:00"
 RUN apk upgrade --no-cache && \
 	apk add --no-cache \
 		ca-certificates=20260611-r0
